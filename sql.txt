@@ -1,0 +1,13 @@
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL,
+  `pwd` varchar(255) NOT NULL,
+  `sex` varchar(255) NOT NULL,
+  `home` varchar(255) NOT NULL,
+  `info` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `user` VALUES ('3', '123', '123', '123', '123', '123');
+INSERT INTO `user` VALUES ('4', '123123', '123123', '男', '北京', '123123');
