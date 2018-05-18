@@ -5,7 +5,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring.test.User;
-
+/**
+ * 测试spring通过配置文件创建类对象 
+ * @author danxx
+ *
+ */
 public class SpringBeanTest {
 	
 	@Test
