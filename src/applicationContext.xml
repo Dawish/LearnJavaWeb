@@ -9,4 +9,20 @@
     	<constructor-arg name="name" value="DreamBoy"></constructor-arg>
 	</bean>
     
+    <bean id="teacher" class="spring.test.Teacher">
+    	<property name="name" value="Teacher Danxx"></property>
+	</bean>
+    
+    <!-- 配置service和dao对象 -->
+	<!-- 因为service依赖于dao，所以先进行dao对象的bean配置 -->
+	<bean id="userDaoImpl" class="spring.dao.UserDaoImpl"></bean>
+	
+	<bean id="userService" class="spring.service.UserService">
+	   	<!--
+	   		注入dao对象
+			name属性值为：service中的某一属性名称
+	       	ref属性值为：被引用的对象对应的bean标签的id属性值	-->
+	    <property name="userDao" ref="userDaoImpl"></property>
+	</bean>
+    
 </beans>
