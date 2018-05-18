@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import spring.test.Student;
 import spring.test.User;
 /**
  * 测试spring通过配置文件创建类对象 
@@ -21,4 +22,14 @@ public class SpringBeanTest {
         System.out.println(user.toString());
         user.add();
     }
+	
+	@Test
+	public void runStudent() {
+	    // 1. 加载Spring配置文件，根据创建对象
+	    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	    // 2. 得到配置创建的对象
+	    Student student = (Student) context.getBean("student");
+	    System.out.println(student.toString());
+	}
+	
 }

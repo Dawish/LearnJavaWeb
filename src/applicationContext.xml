@@ -5,4 +5,8 @@
        
     <bean id="user" class="spring.test.User"></bean>
     
+    <bean id="student" class="spring.test.Student">
+    	<constructor-arg name="name" value="DreamBoy"></constructor-arg>
+	</bean>
+    
 </beans>
