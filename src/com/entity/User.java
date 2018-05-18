@@ -43,5 +43,10 @@ public class User {
 	public void setInfo(String info) {
 		this.info = info;
 	}
-    
+	
+    @Override
+    public String toString() {
+    	// TODO Auto-generated method stub
+    	return super.toString();
+    }
 }
