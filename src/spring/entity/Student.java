@@ -1,4 +1,4 @@
-package spring.test;
+package spring.entity;
 
 /**
  * 使用有参构造函数注入属性

@@ -1,13 +1,16 @@
 package danxx.test;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import spring.entity.PropertyDemo;
+import spring.entity.Student;
+import spring.entity.Teacher;
+import spring.entity.User;
 import spring.service.UserService;
-import spring.test.Student;
-import spring.test.Teacher;
-import spring.test.User;
 /**
  * 测试spring通过配置文件创建类对象 
  * @author danxx
@@ -51,4 +54,16 @@ public class SpringBeanTest {
 	    UserService userService = (UserService) context.getBean("userService");
 	    userService.add();
 	}
+	
+	@Test
+	public void runPropertyDemo() {
+	    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	    PropertyDemo pd = (PropertyDemo) context.getBean("prop");
+	    System.out.println(pd);
+	    System.out.println(Arrays.toString(pd.getArrs()));
+	    System.out.println(pd.getList());
+	    System.out.println(pd.getMap());
+	    System.out.println(pd.getProperties());
+	}
+	
 }

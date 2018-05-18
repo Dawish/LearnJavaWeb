@@ -1,4 +1,4 @@
-package spring.test;
+package spring.entity;
 /**
  * 需要在spring的配置文件中配置bean
  * @author danxx

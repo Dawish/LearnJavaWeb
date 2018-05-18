@@ -3,13 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
        
-    <bean id="user" class="spring.test.User"></bean>
+    <bean id="user" class="spring.entity.User"></bean>
     
-    <bean id="student" class="spring.test.Student">
+    <bean id="student" class="spring.entity.Student">
     	<constructor-arg name="name" value="DreamBoy"></constructor-arg>
 	</bean>
     
-    <bean id="teacher" class="spring.test.Teacher">
+    <bean id="teacher" class="spring.entity.Teacher">
     	<property name="name" value="Teacher Danxx"></property>
 	</bean>
     
@@ -24,5 +24,40 @@
 	       	ref属性值为：被引用的对象对应的bean标签的id属性值	-->
 	    <property name="userDao" ref="userDaoImpl"></property>
 	</bean>
+    
+    
+    <bean id="prop" class="spring.entity.PropertyDemo">
+       <!-- 注入数组 -->
+       <property name="arrs">
+           <list>
+               <value>Value 1 of Array</value>
+               <value>Value 2 of Array</value>
+               <value>Value 3 of Array</value>
+           </list>
+       </property>
+       <!-- 注入List集合 -->
+       <property name="list">
+           <list>
+               <value>Value 1 of List</value>
+               <value>Value 2 of List</value>
+               <value>Value 3 of List</value>
+           </list>
+       </property>
+       <!-- 注入Map集合 -->
+       <property name="map">
+           <map>
+               <entry key="key1" value="Value 1 of Map"></entry>
+               <entry key="key2" value="Value 2 of Map"></entry>
+               <entry key="key3" value="Value 3 of Map"></entry>
+           </map>
+       </property>
+       <!-- 注入Properties -->
+       <property name="properties">
+           <props>
+               <prop key="username">root</prop>
+               <prop key="password">123456</prop>
+           </props>
+       </property>
+   </bean>
     
 </beans>

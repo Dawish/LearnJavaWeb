@@ -1,4 +1,4 @@
-package spring.test;
+package spring.entity;
 
 /**
  * Spring使用set方法注入属性
