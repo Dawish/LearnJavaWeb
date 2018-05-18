@@ -13,11 +13,14 @@ import com.dao.UserDaoImpl;
 import com.entity.User;
 
 public class UpdateServlet extends HttpServlet {
-
+	
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
+	
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
