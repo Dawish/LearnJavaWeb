@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class User {
 	
 	public void add() {
-		System.out.println("User anno add method!");
+		System.out.println("anno User add method!");
 	} 
 }
