@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
        
     <bean id="user" class="spring.entity.User"></bean>
@@ -59,5 +60,42 @@
            </props>
        </property>
    </bean>
+   	
+   	
+   	  <!-- 构造方法方式属性注入 -->
+   	 <bean id="car" class="spring.entity.Car">
+   	 	<constructor-arg name="name" value="MyDxxCar"></constructor-arg>
+   	 	<constructor-arg name="price" value="1200000"></constructor-arg>
+   	 </bean>
+    <!-- setter方法属性注入 -->
+    <bean id="employee" class="spring.entity.Employee" >
+        <!-- 通过property 注入setter方法属性 (属性名称， 由setter方法推理获得)-->
+        <!-- 
+            name 属性名称 （由setter方法获得）
+            value 注入参数的值
+            ref 引用另一个Bean元素的id
+         -->
+        <property name="id" value="100001" />
+        <property name="name" value="张三" />
+        <!-- 注入复杂对象 -->
+        <property name="car" ref="car" />
+    </bean>
     
+    <!--使用p命名空间注入 -->
+    <bean id="employeeP" class="spring.entity.Employee" 
+        p:id="100002" p:name="李四" p:car-ref="car"/>
+        
+        
+   <!--spEL使用 -->
+    <bean id="valueBean" class="spring.entity.ValueBean" />
+    <bean id="employee3" class="spring.entity.Employee" >
+        <!-- 调用valueBean的getId -->
+        <property name="id" value="#{valueBean.id}" />
+  		<!--直接调用对象的方法 -->
+        <property name="name" value="#{valueBean.pickName().toUpperCase()}" />
+       <!--  #{car} 效果类似 ref  -->
+        <property name="car" value="#{car}" />
+    </bean> 
+   	
+
 </beans>

@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import spring.entity.Employee;
 import spring.entity.PropertyDemo;
 import spring.entity.Student;
 import spring.entity.Teacher;
@@ -64,6 +65,26 @@ public class SpringBeanTest {
 	    System.out.println(pd.getList());
 	    System.out.println(pd.getMap());
 	    System.out.println(pd.getProperties());
+	}
+	
+	@Test
+	public void runBeanDemo() {
+	    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	    Employee employee = (Employee) context.getBean("employee");
+	    System.out.println(employee.getId());
+	    System.out.println(employee.getName());
+	    System.out.println(employee.getCar().toString());
+	    
+	    Employee employeeP = (Employee) context.getBean("employeeP");
+	    System.out.println(employeeP.getId());
+	    System.out.println(employeeP.getName());
+	    System.out.println(employeeP.getCar().toString());
+	    
+	    
+	    Employee employee3 = (Employee) context.getBean("employee3");
+	    System.out.println(employee3.getId());
+	    System.out.println(employee3.getName());
+	    System.out.println(employee3.getCar().toString());
 	}
 	
 }
