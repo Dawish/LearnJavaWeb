@@ -7,6 +7,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.anno.User;
 import spring.anno.UserService;
 
+/**
+ * Spring框架入门
+ * https://blog.csdn.net/zxiang248/article/details/51785377
+ * @author danxx
+ *
+ */
 public class SpringAnnoTest {
 	
     @Test

@@ -13,6 +13,8 @@ import spring.entity.Teacher;
 import spring.entity.User;
 import spring.service.UserService;
 /**
+ * Spring简易入门
+ * https://blog.csdn.net/qq_15096707/article/details/72819930 
  * 测试spring通过配置文件创建类对象 
  * @author danxx
  *

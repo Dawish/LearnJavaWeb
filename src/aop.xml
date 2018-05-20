@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 1. 配置对象 -->
+	<bean id="user" class="spring.aop.User"></bean>
+	<bean id="logHandler" class="spring.aop.LogHandler"></bean>
+	
+	<!-- 2. AOP配置 -->
+	<aop:config>
+	    <!-- 2.2 配置切入点 -->
+		<!--execution(<修饰符模式>?<返回类型模式><方法名模式>(<参数模式>)<异常模式>?)  除了返回类型模式、方法名模式和参数模式外，其它项都是可选的。 -->
+	    <aop:pointcut id="pointcut" expression="execution(* spring.aop.User.*(..))"/>
+	
+	    <!-- 2.1 配置切面 -->
+	    <aop:aspect ref="logHandler">
+	        <!-- 2.3 针对切入点，配置通知/增强 -->
+	        <aop:before method="before" pointcut-ref="pointcut"/>
+	        <aop:after method="after" pointcut-ref="pointcut"/>
+	    </aop:aspect>
+	</aop:config>
+
+</beans>

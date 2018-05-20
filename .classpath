@@ -22,5 +22,8 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-api-2.11.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit-5.2.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-aspects-5.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aspectjweaver-1.8.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
