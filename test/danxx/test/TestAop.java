@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring.aop.User;
+import spring.aop_anno.AopUser;
 
 /**
  * Spring aop介绍
@@ -18,5 +19,11 @@ public class TestAop {
 	        ApplicationContext context = new ClassPathXmlApplicationContext("aop.xml");
 	        User user = (User) context.getBean("user");
 	        user.add();
+	    }
+	  @Test
+	    public void runAopAnno() {
+	        ApplicationContext context = new ClassPathXmlApplicationContext("aopanno.xml");
+	        AopUser aopUser = (AopUser) context.getBean("aopUser");
+	        aopUser.add();
 	    }
 }
