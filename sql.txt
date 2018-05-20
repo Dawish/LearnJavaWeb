@@ -11,3 +11,13 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` VALUES ('3', '123', '123', '123', '123', '123');
 INSERT INTO `user` VALUES ('4', '123123', '123123', '男', '北京', '123123');
+
+
+CREATE TABLE `t_customer` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+INSERT INTO `t_customer` VALUES ('3', 'danxx', 'hangzhou');
