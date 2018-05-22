@@ -10,3 +10,6 @@ Eclipse 构建Maven项目详细流程（图文并茂）: https://blog.csdn.net/u
 
 Spring 4 MVC+Hibernate 4+MySQL+Maven使用注解集成实例:
 https://blog.csdn.net/fudaxing/article/details/50518051
+
+框架篇：Spring+SpringMVC+hibernate整合开发:
+https://www.cnblogs.com/xrog/p/6359706.html
