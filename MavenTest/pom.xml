@@ -22,6 +22,7 @@
     <log4jVersion>1.2.17</log4jVersion>
     <fileuploadVersion>1.3.1</fileuploadVersion>
     <lombokVersion>1.16.10</lombokVersion> 
+    <commonsLogging>1.2</commonsLogging> 
   </properties>  
   
   <dependencies>
@@ -57,7 +58,19 @@
       <artifactId>spring-orm</artifactId>
       <version>${springVersion}</version>
     </dependency>
-
+	
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>${springVersion}</version>
+    </dependency>
+	
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${springVersion}</version>
+    </dependency>
+	
     <!-- spring web + spring MVC-->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -163,7 +176,12 @@
         <scope>provided</scope>
       </dependency>
 
-  	
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>${commonsLogging}</version>
+        <scope>provided</scope>
+      </dependency>
 	
   </dependencies>
   
