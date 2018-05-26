@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
@@ -11,7 +12,8 @@
 		http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
 
 	<!-- 配置数据源 c3p0 -->
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="${jdbc.driver}" />
 		<property name="jdbcUrl" value="${jdbc.url}" />
@@ -49,7 +51,8 @@
 				<prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</prop>
 				<prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</prop>
 				<prop key="hibernate.cache.region.factory_class">${hibernate.cache.region.factory_class}</prop>
-				<prop key="hibernate.cache.provider_configuration_file_resource_path">${hibernate.cache.provider_configuration_file_resource_path}
+				<prop
+					key="hibernate.cache.provider_configuration_file_resource_path">${hibernate.cache.provider_configuration_file_resource_path}
 				</prop>
 			</props>
 		</property>
@@ -64,17 +67,22 @@
 	</bean>
 
 	<!-- 配置事务增强处理Bean，指定事务管理器 -->
-	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+	<tx:advice id="transactionAdvice"
+		transaction-manager="transactionManager">
 		<!-- 配置详细事务处理语义 -->
 		<tx:attributes>
 			<tx:method name="insert*" propagation="REQUIRED" />
 			<tx:method name="update*" propagation="REQUIRED" />
 			<tx:method name="delete*" propagation="REQUIRED" />
 
-			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="load*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="get*" propagation="SUPPORTS"
+				read-only="true" />
+			<tx:method name="find*" propagation="SUPPORTS"
+				read-only="true" />
+			<tx:method name="select*" propagation="SUPPORTS"
+				read-only="true" />
+			<tx:method name="load*" propagation="SUPPORTS"
+				read-only="true" />
 
 			<!-- 其他采用默认事务方式 -->
 			<tx:method name="*" />

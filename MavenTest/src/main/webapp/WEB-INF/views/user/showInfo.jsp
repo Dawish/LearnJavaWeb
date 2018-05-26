@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -17,17 +18,21 @@
 <title>userInfo</title>
 </head>
 <body>
-	用户信息     昵称： ${userInfo.nickName} 用户id：${userInfo.id}  用户电话:${userInfo.telephone }  
-	                  注册时间： <fmt:formatDate value="${userInfo.registerTime }" pattern="yyyy-MM-dd HH:mm:ss"/>
-	                  角色：[<c:forEach items="${ userInfo.acctRoles}" var="role">
+	用户信息 昵称： ${userInfo.nickName} 用户id：${userInfo.id}
+	用户电话:${userInfo.telephone } 注册时间：
+	<fmt:formatDate value="${userInfo.registerTime }"
+		pattern="yyyy-MM-dd HH:mm:ss" />
+	角色：[
+	<c:forEach items="${ userInfo.acctRoles}" var="role">
 	                    ${role.name } &nbsp; 权限[
-	                       <c:forEach items="${ role.acctAuthorities}" var="authority">
+	                       <c:forEach items="${ role.acctAuthorities}"
+			var="authority">
 	                         ${authority.name } 
 	                       </c:forEach> ]
-	                  </c:forEach>]
-	
-	<br/>
-	ajax显示全部用户信息：
+	                  </c:forEach>
+	]
+
+	<br /> ajax显示全部用户信息：
 	<div id="show_all_user"></div>
 </body>
 <script type="text/javascript">
