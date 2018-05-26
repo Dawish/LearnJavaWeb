@@ -21,7 +21,12 @@ public class TestController {
     public String test() {
         return "test";
     }
-
+    
+    @RequestMapping(value = "/say", method = RequestMethod.GET)
+    public String sayHello() {
+        return "danxx hello success!";
+    }
+    
     @RequestMapping(value = "/savePerson", method = RequestMethod.GET)
     @ResponseBody
     public String savePerson() {
