@@ -23,6 +23,7 @@ public class TestController {
     }
     
     @RequestMapping(value = "/say", method = RequestMethod.GET)
+    @ResponseBody
     public String sayHello() {
         return "danxx hello success!";
     }
