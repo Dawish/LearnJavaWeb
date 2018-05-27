@@ -10,7 +10,8 @@
 	<!-- 按照包名处理注解 -->
 	<context:component-scan
 		base-package="danxx.project" />
-
+	
+	<!-- 视图名称解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
