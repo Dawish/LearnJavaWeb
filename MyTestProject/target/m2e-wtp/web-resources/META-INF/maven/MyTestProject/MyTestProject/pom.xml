@@ -57,6 +57,12 @@
 			<scope>provided</scope>
 		</dependency>
 		
+			<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4jVersion}</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>MyTestProject</finalName>
