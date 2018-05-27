@@ -9,13 +9,34 @@
 
 	<!-- 按照包名处理注解 -->
 	<context:component-scan
-		base-package="danxx.project" />
-	
+		base-package="danxx.project">
+		<!-- 注解处理排除  防止不同的配置文件对同样的注解重复处理-->
+		<!-- 
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+		-->
+	</context:component-scan>
+
 	<!-- 视图名称解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+
+	<!-- configure SimpleMappingExceptionResolver -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.ArithmeticException">my_error</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- interceptor setting -->
+	
 
 </beans>
