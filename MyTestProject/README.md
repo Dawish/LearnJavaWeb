@@ -49,3 +49,14 @@ https://www.cnblogs.com/liuyangjava/p/6752120.html
 [刘阳Spring MVC学习笔记]
 
 http://www.cnblogs.com/liuyangjava/p/6736619.html
+
+### ModelAndView是什么以及它的作用是什么?
+- 简单理解它是将后台返回的数据传递给View层，同时包含一个要访问的View层的URL地址
+- 当控制器处理完请求后，通常控制器会将包含视图名称以及一些模型属性的ModelAndView对象返回给DispatcherServlet。因此，在控制器中会构造一个ModelAndView对象
+- ModelAndView作用 : 1.设置转向地址  2.将底层获取的数据进行存储（或者封装） 3.最后将数据传递给View
+
+    
+    
+   
+
+
