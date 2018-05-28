@@ -1,6 +1,6 @@
-###SpringMVC框架主要由DispatcherServlet、HandlerMapping、Controller、ViewResolver四个接口组成。
+### SpringMVC框架主要由DispatcherServlet、HandlerMapping、Controller、ViewResolver四个接口组成。
 
-###SpringMVC常用注解
+### SpringMVC常用注解
 
 - @Controller
 
@@ -41,6 +41,9 @@
 　　使一个Contoller成为全局的异常处理类，类中用@ExceptionHandler方法注解的方法可以处理所有Controller发生的异常
 
 [刘阳Java]_Spring MVC中ModelAndView的用法_第3讲
+
 https://www.cnblogs.com/liuyangjava/p/6752120.html
+
 [刘阳Spring MVC学习笔记]
+
 http://www.cnblogs.com/liuyangjava/p/6736619.html
