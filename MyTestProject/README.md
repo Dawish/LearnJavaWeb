@@ -55,7 +55,10 @@ http://www.cnblogs.com/liuyangjava/p/6736619.html
 - 当控制器处理完请求后，通常控制器会将包含视图名称以及一些模型属性的ModelAndView对象返回给DispatcherServlet。因此，在控制器中会构造一个ModelAndView对象
 - ModelAndView作用 : 1.设置转向地址  2.将底层获取的数据进行存储（或者封装） 3.最后将数据传递给View
 
-    
+git rm -r --cached .  #清除缓存  
+git add . #重新trace file  
+git commit -m "update .gitignore" #提交和注释  
+git push origin master #可选，如果需要同步到remote上的话  
     
    
 

@@ -87,11 +87,11 @@ public class TestController {
 	@RequestMapping("/m04")
 	public void m04(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String id = request.getParameter("id");
-		String sname = request.getParameter("sname");
-		String t_id = request.getParameter("t_id");
+		String name = request.getParameter("name");
+		String age = request.getParameter("age");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println(id + "  " + sname + "  " + t_id);
+		out.println(id + "  " + name + "  " + age);
 		out.flush();
 		out.close();
 	}
